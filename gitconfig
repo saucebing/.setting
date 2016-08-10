@@ -1,0 +1,20 @@
+[user]
+  name = Bingwei Chen
+  email = chenbwei2012@gmail.com
+[color]
+  branch = auto
+  diff = auto
+  interative = auto
+  status = auto
+  ui = auto
+[core]
+  pager = less -r
+	excludesfile = ~/.gitexcludes
+	editor = vim
+
+; vim: ft=gitconfig
+[push]
+	default = matching
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
