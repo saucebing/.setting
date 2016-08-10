@@ -50,7 +50,7 @@ GREP_COLOR='3;33'
 #
 ## preceed personal path before system path
 ## it is better placed at the last line
-#export PATH=${PATH}:/usr/sbin/
+export PATH=${PATH}:/usr/sbin/
 #export PATH=$HOME/vroot/bin:${PATH}
 #export PATH=${HOME}/vroot/local/mpich-3.1.2/bin/:${PATH}
 #

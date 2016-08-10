@@ -5,6 +5,7 @@ setopt CORRECT
 
 # use oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
+ZSH_THEME=ys
 plugins=(common-aliases \
          screen \
          git\
@@ -20,7 +21,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Load nested configs
 for f in $(find -L ${HOME}/.setting/zsh -name \*.zsh | \
-  grep -v zshrc.zsh | grep -v install_zsh.zsh); do
+  grep -v zshrc.zsh | grep -v install_zsh.zsh | grep -v prompts.zsh); 
+do
   source $f
 done
 
