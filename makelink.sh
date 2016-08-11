@@ -6,6 +6,7 @@
 LINKFILES="\
   gitconfig gitexcludes \
   vars.sh aliases.sh
+	tmux.conf
   "
 
 #LINKFILES="\
