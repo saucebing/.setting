@@ -1,4 +1,5 @@
-install clang: sudo dnf -y install clang
+sudo dnf -y install automake gcc gcc-c++ kernel-devel cmake
+sudo dnf -y install python-devel python3-devel
 
 mkdir ~/.vim/bundle
 install bundle: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -7,4 +8,10 @@ add some codes in .vimrc, please refer to http://blog.csdn.net/jiaolongdy/articl
 download YouCompleteMe: from github
 rename the dir to ~/.vim/bundle/YouCompleteMe
 in vim, :BundleInstall
+Please read the README.md!!!
 Please refer to http://blog.csdn.net/jiaolongdy/article/details/17889787/ and http://tieba.baidu.com/p/2672605209#40873390993l
+
+Maybe you will meet with some bugs:
+For example, YCM server shutdown, you can open /temp/ycm_temp and ls -lt to find the latest log file. Then you may find libtinfo.so.5: no such file or directory, solution is: ln -s /lib64/libtinfo.so.6 /lib64/libtinfo.so.5
+
+Please refer to http://blog.jobbole.com/58978/ to see YouCompleteMe setting

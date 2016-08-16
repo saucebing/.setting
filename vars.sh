@@ -35,14 +35,21 @@ GREP_COLOR='3;33'
 #  source $INTELMPIVAR
 #fi
 #
-## for madagascar
-#MADAGASCARVERSION="1.6.4"
-#MADAGASCARROOT=${HOME}/vroot/local/madagascar-${MADAGASCARVERSION}
-#MADAGASCARENV=${MADAGASCARROOT}/share/madagascar/etc/env.sh
-#if [[ -f $MADAGASCARENV ]]; then
-#  source $MADAGASCARENV
-#fi
-#
+
+# for mpich
+MPICHVERSION="3.1.4"
+MPICHROOT=${HOME}/soft/mpich-3.1.4
+PATH=${MPICHROOT}/bin:${PATH}
+LD_LIBRARY_PATH=${MPICHROOT}/lib64:${LD_LIBRARY_PATH}
+# for madagascar
+MADAGASCARVERSION="1.7"
+MADAGASCARROOT=${HOME}/soft/madagascar-1.7
+RSFROOT=${MADAGASCARROOT}
+MADAGASCARENV=${MADAGASCARROOT}/share/madagascar/etc/env.sh
+if [[ -f $MADAGASCARENV ]]; then
+  source $MADAGASCARENV
+fi
+
 ## export PATH, MANPATH, INFOPATH for texlive 2012
 #export PATH=/usr/local/texlive/2012/bin/x86_64-linux:$PATH
 #export MANPATH=/usr/local/texlive/2012/texmf/doc/man:$MANPATH
@@ -50,6 +57,8 @@ GREP_COLOR='3;33'
 #
 ## preceed personal path before system path
 ## it is better placed at the last line
+export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
+
 export PATH=${PATH}:/usr/sbin/
 #export PATH=$HOME/vroot/bin:${PATH}
 #export PATH=${HOME}/vroot/local/mpich-3.1.2/bin/:${PATH}
