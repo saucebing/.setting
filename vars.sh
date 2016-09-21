@@ -17,9 +17,10 @@ GREP_COLOR='3;33'
 #export LD_LIBRARY_PATH=${CUDAROOT}/lib64:${LD_LIBRARY_PATH}
 #
 ## cwp_su
-#SUVERSION="40"
-#export CWPROOT=${HOME}/vroot/src/cwp_su_all_${SUVERSION}
-#export PATH=${CWPROOT}/bin:${PATH}
+SUVERSION="43"
+export CWPROOT=${HOME}/tar/cwp_su_all_${SUVERSION}
+export PATH=${CWPROOT}/bin:${PATH}
+export LD_LIBRARY_PATH=${CWPROOT}/lib:${LD_LIBRARY_PATH}
 #
 ## intel compiler toolkits
 #ICCROOT=${HOME}/vroot/opt/composerxe
@@ -35,6 +36,15 @@ GREP_COLOR='3;33'
 #  source $INTELMPIVAR
 #fi
 #
+
+# for icc
+source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh intel64
+
+# for mkl
+source /opt/intel/mkl/bin/mklvars.sh intel64
+
+# for boost
+export LD_LIBRARY_PATH=~/tar/boost_1_61_0/stage/lib:$LD_LIBRARY_PATH
 
 # for mpich
 MPICHVERSION="3.1.4"
